@@ -1,6 +1,6 @@
 import {useGetCharactersQuery} from '../../generated/graphql.tsx'
 
-const CharactersPage = () => {
+const Characters = () => {
     const { loading, error, data } = useGetCharactersQuery();
 
     if (loading) return <p>Chargement...</p>;
@@ -11,4 +11,4 @@ const CharactersPage = () => {
     return <span>BLABLA</span>
 }
 
-export default CharactersPage;
+export default Characters;

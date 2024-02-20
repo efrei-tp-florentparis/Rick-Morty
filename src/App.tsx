@@ -1,7 +1,8 @@
 // apollo
 import {ApolloProvider} from '@apollo/client';
 import {ApolloClient, InMemoryCache} from '@apollo/client';
-import CharactersPage from "./pages/Characters";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import router from "./router";
 
 const client = new ApolloClient({
     uri: 'https://rickandmortyapi.com/graphql',
@@ -9,10 +10,12 @@ const client = new ApolloClient({
 });
 
 function App() {
+    const browserRouter = createBrowserRouter(router);
+
     return (
         <>
             <ApolloProvider client={client}>
-                <CharactersPage />
+                <RouterProvider router={browserRouter} />
             </ApolloProvider>
         </>
     )
