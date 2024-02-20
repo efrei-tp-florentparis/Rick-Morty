@@ -1,0 +1,12 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  background-color: #16172a;
+  padding: 20px 30px;
+  min-height: 100vh;
+
+  .infos {
+    color: #fff;
+    padding-top: 10px;
+  }
+}

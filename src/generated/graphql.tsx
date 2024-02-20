@@ -215,7 +215,7 @@ export type GetCharactersQueryVariables = Exact<{
 }>;
 
 
-export type GetCharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', results?: Array<{ __typename?: 'Character', name?: string | null, image?: string | null } | null> | null } | null };
+export type GetCharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', results?: Array<{ __typename?: 'Character', id?: string | null, name?: string | null, image?: string | null } | null> | null } | null };
 
 
 export const GetCharacterDetailsDocument = gql`
@@ -273,6 +273,7 @@ export const GetCharactersDocument = gql`
     query GetCharacters($page: Int) {
   characters(page: $page) {
     results {
+      id
       name
       image
     }

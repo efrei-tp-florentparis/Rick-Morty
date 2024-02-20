@@ -4,10 +4,12 @@
   display: flex;
   align-items: end;
   overflow: hidden;
+  text-decoration: none;
+  color: #000;
 
   .bottom {
     background-color: #fff;
     width: 100%;
-    padding: 20px 30px;
+    padding: 20px;
   }
 }

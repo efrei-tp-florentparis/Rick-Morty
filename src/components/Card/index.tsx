@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 
 type CardProps = {
@@ -5,13 +6,17 @@ type CardProps = {
   img: string;
 };
 
-const Card = ({ name, img }: CardProps) => {
+const Card = ({ id, name, img }: CardProps) => {
   return (
-    <div className={styles.card} style={{ background: `url(${img})` }}>
+    <Link
+      to={`/c/${id}`}
+      className={styles.card}
+      style={{ background: `url(${img})` }}
+    >
       <div className={styles.bottom}>
         <span>{name}</span>
       </div>
-    </div>
+    </Link>
   );
 };
 
