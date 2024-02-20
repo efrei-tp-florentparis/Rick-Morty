@@ -206,24 +206,16 @@ export type QueryLocationsByIdsArgs = {
 export type GetCharactersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetCharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', info?: { __typename?: 'Info', count?: number | null } | null, results?: Array<{ __typename?: 'Character', name?: string | null } | null> | null } | null, location?: { __typename?: 'Location', id?: string | null } | null, episodesByIds?: Array<{ __typename?: 'Episode', id?: string | null } | null> | null };
+export type GetCharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', results?: Array<{ __typename?: 'Character', name?: string | null, image?: string | null } | null> | null } | null };
 
 
 export const GetCharactersDocument = gql`
     query GetCharacters {
-  characters(page: 2, filter: {name: "rick"}) {
-    info {
-      count
-    }
+  characters {
     results {
       name
+      image
     }
-  }
-  location(id: 1) {
-    id
-  }
-  episodesByIds(ids: [1, 2]) {
-    id
   }
 }
     `;
