@@ -1,12 +1,21 @@
+// apollo
+import {ApolloProvider} from '@apollo/client';
+import {ApolloClient, InMemoryCache} from '@apollo/client';
+import CharactersPage from "./pages/Characters";
 
-import './App.css'
+const client = new ApolloClient({
+    uri: 'https://rickandmortyapi.com/graphql',
+    cache: new InMemoryCache(),
+});
 
 function App() {
-  return (
-    <>
-      <span>TEst</span>
-    </>
-  )
+    return (
+        <>
+            <ApolloProvider client={client}>
+                <CharactersPage />
+            </ApolloProvider>
+        </>
+    )
 }
 
 export default App
