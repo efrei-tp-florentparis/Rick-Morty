@@ -203,15 +203,17 @@ export type QueryLocationsByIdsArgs = {
   ids: Array<Scalars['ID']['input']>;
 };
 
-export type GetCharactersQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetCharactersQueryVariables = Exact<{
+  page?: InputMaybe<Scalars['Int']['input']>;
+}>;
 
 
 export type GetCharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', results?: Array<{ __typename?: 'Character', name?: string | null, image?: string | null } | null> | null } | null };
 
 
 export const GetCharactersDocument = gql`
-    query GetCharacters {
-  characters {
+    query GetCharacters($page: Int) {
+  characters(page: $page) {
     results {
       name
       image
@@ -232,6 +234,7 @@ export const GetCharactersDocument = gql`
  * @example
  * const { data, loading, error } = useGetCharactersQuery({
  *   variables: {
+ *      page: // value for 'page'
  *   },
  * });
  */

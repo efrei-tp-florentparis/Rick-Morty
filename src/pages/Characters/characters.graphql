@@ -1,5 +1,5 @@
-query GetCharacters {
-  characters {
+query GetCharacters($page: Int) {
+  characters(page: $page) {
     results {
       name
       image
